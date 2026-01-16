@@ -7,7 +7,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"", 
+    "prepare": "husky install",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -41,6 +42,7 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
     "jest": "^30.0.0",
     "prettier": "^3.4.2",
     "source-map-support": "^0.5.21",
@@ -54,7 +56,11 @@
   },
   "jest": {
     "rootDir": "src",
-    "moduleFileExtensions": ["js", "json", "ts"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
     "testEnvironment": "node",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
@@ -66,13 +72,14 @@
       "!app.module.ts",
       "!**/*.spec.ts"
     ],
-    "coverageDirectory": "../coverage", "coverageThreshold": {
-       "global": { 
-        "branches": 70, 
-        "functions": 70, 
-        "lines": 70, 
-        "statements": 70 
-        } 
+    "coverageDirectory": "../coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
       }
+    }
   }
 }
